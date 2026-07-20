@@ -1,0 +1,61 @@
+dashboards:
+
+  - name: CM-RDS-ALERT
+    url: "https://monitoring.creditmantri.com/d/vL8ASiO7k/cm-rds-alert-85?orgId=1&refresh=5s&from=now-30m&to=now"
+
+  - name: CM-CRON
+    url: "https://monitoring.creditmantri.com/d/CM-CRON/cm-cron-90?orgId=1&refresh=30s&from=now-30m&to=now"
+
+  - name: AZURE-WAREHOUSE
+    url: "https://monitoring.creditmantri.com/d/Azure_Warehouse/azure_warehouse-90?orgId=1&refresh=30s&from=now-30m&to=now"
+
+  - name: CRM-80%(CFU/ARS/REF)
+    url: "https://monitoring.creditmantri.com/d/CRMpa3/crm-80-cfu-ars-ref?orgId=1&refresh=30s&from=now-30m&to=now"
+
+  - name: CRM-OPS-70%
+    url: "https://monitoring.creditmantri.com/d/CRM-OPSpa3/crm-ops-70?orgId=1&refresh=30s"
+
+  - name: CMOL-API
+    url: "https://monitoring.creditmantri.com/d/CMOL-APIpa3/cmol-api-80?orgId=1&from=now-30m&to=now&refresh=5s"
+
+  - name: DHUVEKAM AND ANEKAM
+    url: "https://monitoring.creditmantri.com/d/Dhuvekam/dhuvekam-and-anekam-90?orgId=1&refresh=30s&from=now-30m&to=now"
+
+  - name: EC2-CPU-UTILISATION
+    url: "https://monitoring.creditmantri.com/d/NUQpqT27k/ec2-cpuutilization-80-alert?orgId=1"
+
+  - name: ELK-MASTER
+    url: "https://monitoring.creditmantri.com/d/yt08eCbVz/elk_master-70?orgId=1&from=now-30m&to=now&refresh=5s"
+
+  - name: MONGO-DOCKER-LOGIN
+    url: "https://monitoring.creditmantri.com/d/tmsOtSxZkyu/mongo-docker-login?orgId=1&from=now-30m&to=now"
+
+  - name: WINDOWS EXPORTER DASHBOARD
+    url: "https://monitoring.creditmantri.com/d/IV0hu1m7z/windows-exporter-dashboard?orgId=1&refresh=10s&from=now-30m&to=now"
+
+  - name: WINDOWS_SFTP
+    url: "https://monitoring.creditmantri.com/d/ZVVc8wAIz/windows_sftp?orgId=1&refresh=5s"
+
+  - name: NODE EXPORTER FULL-RSTUDIO-AZURE
+    url: "https://monitoring.creditmantri.com/d/iYnoO6Gnk/node-exporter-full?orgId=1&refresh=10s&from=now-30m&to=now&var-DS_PROMETHEUS=Prometheus&var-job=node_exporter&var-name=Rstudio-Azure&var-node=20.244.12.173:9100&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B"
+
+  - name: NODE EXPORTER FULL-KAFKA AZURE
+    url: "https://monitoring.creditmantri.com/d/iYnoO6Gnk/node-exporter-full?orgId=1&refresh=10s&from=now-30m&to=now&var-DS_PROMETHEUS=Prometheus&var-job=node_exporter&var-name=kafka-azure&var-node=172.31.49.119:9100&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B"
+
+  - name: NODE EXPORTER FULL-CDC 
+    url: "https://monitoring.creditmantri.com/d/iYnoO6Gnk/node-exporter-full?orgId=1&refresh=10s&from=now-30m&to=now&var-DS_PROMETHEUS=Prometheus&var-job=node_exporter&var-name=CDC&var-node=172.31.49.20:9100&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B"
+
+  - name: AWS ELASTICCHE REDIS - PRELOGIN
+    url: "https://monitoring.creditmantri.com/d/awsredis/aws-elasticache-redis?orgId=1&from=now-30m&to=now&var-datasource=CloudWatch&var-region=default&var-cacheclusterId=prelogin-001&var-cachenodeid=0001"
+
+  - name: AWS ELASTICCHE REDIS - CMOL-CRM
+    url: "https://monitoring.creditmantri.com/d/awsredis/aws-elasticache-redis?orgId=1&from=now-30m&to=now&var-datasource=CloudWatch&var-region=default&var-cacheclusterId=creditmantri-cmolcrm-1-001&var-cachenodeid=0001"
+
+  - name: AWS ELASTICCHE REDIS - CM-CG-AE
+    url: "https://monitoring.creditmantri.com/d/awsredis/aws-elasticache-redis?orgId=1&from=now-30m&to=now&var-datasource=CloudWatch&var-region=default&var-cacheclusterId=cm-cg-ae-new-001&var-cachenodeid=0001"
+
+  - name: AWS ELASTICSEARCH
+    url: "https://monitoring.creditmantri.com/d/eCN_s8yWk/aws-elasticsearch?orgId=1&refresh=1m&from=now-30m&to=now&var-datasource=CloudWatch&var-region=default&var-domainName=cmol-es-uat&var-clientId=980326058463"
+
+  - name: KAFKA_CDC
+    url: "https://kafka-cdc.creditmantri.com/ui/clusters/local/consumer-groups?sortBy=STATE&sortDirection=desc&page=1&perPage=25"

@@ -1,0 +1,102 @@
+import time
+def upload_image(page, image_path):
+    print("Opening attachment flow...")
+    # ---------------------------------------------------------
+    # Step 1: Try clicking Attach (but don't depend on it)
+    # ---------------------------------------------------------
+    try:
+        attach = page.get_by_role("button", name="Attach")
+        if attach.count() > 0:
+            attach.first.click(force=True)
+            page.wait_for_timeout(1500)
+    except Exception:
+        print("Attach click failed, continuing anyway...")
+
+    # ---------------------------------------------------------
+    # Step 1b: Explicitly select "Photos & videos" in the menu.
+    # Without this, the only file input available is the Sticker
+    # Maker's (accept="image/*" only, no video) — which is why
+    # images have been sending as small, cropped stickers instead
+    # of normal photos. This menu item is not exposed with a
+    # proper ARIA button role, so we match on visible text.
+    # ---------------------------------------------------------
+    try:
+        photos_option = page.get_by_text("Photos & videos", exact=True)
+        photos_option.wait_for(timeout=5000)
+        photos_option.click()
+        page.wait_for_timeout(1000)
+    except Exception:
+        print(
+            "Could not click 'Photos & videos' — will likely fall "
+            "back to Sticker Maker's file input."
+        )
+
+    # ---------------------------------------------------------
+    # Step 2: Direct file upload (DO NOT WAIT FOR VISIBILITY)
+    # ---------------------------------------------------------
+    print("Available file inputs...")
+
+    inputs = page.locator("input[type=file]")
+
+    print("Total file inputs:", inputs.count())
+
+    for i in range(inputs.count()):
+        inp = inputs.nth(i)
+        print(
+            i,
+            "accept =", inp.get_attribute("accept"),
+            "| multiple =", inp.get_attribute("multiple")
+        )
+
+    print("Uploading using LAST file input...")
+
+    inputs.last.set_input_files(image_path)
+    page.wait_for_timeout(3000)
+    # screenshot for debugging
+    page.screenshot(
+        path="after_upload_trigger.png",
+        full_page=True
+    )
+    # ---------------------------------------------------------
+    # Step 3: Wait for preview + Send button
+    # ---------------------------------------------------------
+    page.screenshot(
+        path="before_send_preview.png",
+        full_page=True
+    )
+
+    print("Waiting for Send button...")
+    send_button = page.get_by_role("button", name="Send")
+    deadline = time.time() + 25
+    final_btn = None
+    while time.time() < deadline:
+        try:
+            count = send_button.count()
+            for i in range(count):
+                btn = send_button.nth(i)
+                if btn.is_visible():
+                    final_btn = btn
+                    break
+            if final_btn:
+                break
+        except Exception:
+            pass
+        page.wait_for_timeout(500)
+    if not final_btn:
+        page.screenshot(
+            path="debug_send_missing.png",
+            full_page=True
+        )
+        raise Exception("Send button not found")
+    # ---------------------------------------------------------
+    # Step 4: Stabilize upload
+    # ---------------------------------------------------------
+    print("Finalizing upload...")
+    page.wait_for_timeout(3000)
+    # ---------------------------------------------------------
+    # Step 5: Send image
+    # ---------------------------------------------------------
+    print("Sending image...")
+    final_btn.click(force=True)
+    page.wait_for_timeout(3000)
+    print("Image sent successfully.")

@@ -1,0 +1,100 @@
+Cron Setup Documentation for grafana-monitor-bot
+
+Project Path: /home/lokeshkumar/grafana-monitor-bot
+
+Virtual Environment: /home/lokeshkumar/grafana-monitor-bot/venv
+
+Why Cron? - Automates execution of bot.py every hour during the selected
+shift. - Eliminates manual execution. - Captures Grafana dashboards. -
+Parses metrics. - Generates logs. - Future: Sends screenshots through
+WhatsApp.
+
+Main Cron Command
+
+cd /home/lokeshkumar/grafana-monitor-bot &&
+/home/lokeshkumar/grafana-monitor-bot/venv/bin/python
+/home/lokeshkumar/grafana-monitor-bot/bot.py >>
+/home/lokeshkumar/grafana-monitor-bot/logs/bot.log 2>&1
+
+Explanation 1. cd /home/lokeshkumar/grafana-monitor-bot Changes to the
+project directory so relative paths (config, screenshots, browser, logs)
+work correctly.
+
+2.  /home/lokeshkumar/grafana-monitor-bot/venv/bin/python Executes the
+    Python interpreter from the project’s virtual environment. No need
+    to run ‘source venv/bin/activate’.
+
+3.  /home/lokeshkumar/grafana-monitor-bot/bot.py Starts the monitoring
+    bot.
+
+    -   Opens Grafana dashboards
+    -   Captures screenshots
+    -   Extracts metrics
+    -   Checks thresholds
+    -   Stores screenshots
+    -   Future: Sends WhatsApp notifications
+
+4.  logs/bot.log Appends standard output to the log file.
+
+5.  2>&1 Redirects error output into the same log file.
+
+Shift Cron Schedules (Enable only ONE schedule at a time)
+
+07:00 AM – 10:00 AM 0 7-10 * * * cd
+/home/lokeshkumar/grafana-monitor-bot &&
+/home/lokeshkumar/grafana-monitor-bot/venv/bin/python
+/home/lokeshkumar/grafana-monitor-bot/bot.py >>
+/home/lokeshkumar/grafana-monitor-bot/logs/bot.log 2>&1
+
+07:00 AM – 02:00 PM 0 7-14 * * * cd
+/home/lokeshkumar/grafana-monitor-bot &&
+/home/lokeshkumar/grafana-monitor-bot/venv/bin/python
+/home/lokeshkumar/grafana-monitor-bot/bot.py >>
+/home/lokeshkumar/grafana-monitor-bot/logs/bot.log 2>&1
+
+03:00 PM – 10:00 PM 0 15-22 * * * cd
+/home/lokeshkumar/grafana-monitor-bot &&
+/home/lokeshkumar/grafana-monitor-bot/venv/bin/python
+/home/lokeshkumar/grafana-monitor-bot/bot.py >>
+/home/lokeshkumar/grafana-monitor-bot/logs/bot.log 2>&1
+
+11:00 PM – 06:00 AM 0 23,0-6 * * * cd
+/home/lokeshkumar/grafana-monitor-bot &&
+/home/lokeshkumar/grafana-monitor-bot/venv/bin/python
+/home/lokeshkumar/grafana-monitor-bot/bot.py >>
+/home/lokeshkumar/grafana-monitor-bot/logs/bot.log 2>&1
+
+Useful Commands
+
+Edit cron: crontab -e
+
+View cron: crontab -l
+
+Check cron installation: which crontab
+
+Check cron service: systemctl status cron
+
+View log: cat logs/bot.log
+
+Last 50 log lines: tail -50 logs/bot.log
+
+Live log: tail -f logs/bot.log
+
+Search errors: grep -i “error” logs/bot.log
+
+Search dashboard logs: grep -A10 -B10 “KAFKA CDC” logs/bot.log
+
+Search certificate errors: grep -i “ERR_CERT” logs/bot.log
+
+Project Relevance
+
+Cron acts as the scheduler for the Grafana Monitoring Bot.
+
+Workflow: 1. Starts bot.py using the virtual environment. 2. Launches
+Playwright. 3. Opens Grafana dashboards. 4. Captures screenshots. 5.
+Extracts dashboard metrics. 6. Compares values with thresholds. 7.
+Stores screenshots. 8. Writes execution details to logs/bot.log. 9.
+Future enhancement: Sends screenshots to WhatsApp.
+
+This allows the monitoring process to run automatically every hour
+during the selected shift without manual intervention.

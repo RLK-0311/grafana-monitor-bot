@@ -1,0 +1,35 @@
+Interview Notes - Grafana Monitor Bot
+
+Project Objective Automate Grafana monitoring by periodically collecting
+dashboard data, capturing screenshots, parsing metrics, logging
+execution, and preparing alert notifications.
+
+Technologies - Python - Playwright - Grafana - YAML Configuration -
+Cron - Loguru - Linux - Virtual Environment
+
+Why Playwright? - Reliable browser automation. - Persistent browser
+profile. - Screenshot support.
+
+Why Cron? - Automatic scheduling. - No manual execution. - Hourly
+monitoring based on shifts.
+
+Why Virtual Environment? - Isolated dependencies. - Consistent Python
+interpreter for cron.
+
+Execution Flow 1. Cron starts bot.py. 2. Playwright launches browser. 3.
+Grafana dashboards open. 4. Screenshots are captured. 5. Metrics are
+extracted and parsed. 6. Thresholds are checked. 7. Logs are generated.
+8. Future enhancement: WhatsApp notifications.
+
+Common Questions Q: Why use persistent browser profiles? A: To retain
+login sessions and reduce repeated authentication.
+
+Q: Why store logs? A: To troubleshoot failures and verify scheduled
+executions.
+
+Q: Why cron instead of manual execution? A: Continuous monitoring
+without user intervention.
+
+Achievements - Automated dashboard monitoring. - Shift-based
+scheduling. - Structured logging. - Extensible design for WhatsApp
+integration.

@@ -1,0 +1,19 @@
+cpu:
+  enabled: true
+  threshold: 80
+
+disk:
+  enabled: true
+  threshold: 80
+
+rds:
+  enabled: true
+  threshold: 80
+
+kafka:
+  enabled: true
+  lag_threshold: 1000
+
+cleanup:
+  delete_after_upload: true
+  delete_after_minutes: 5

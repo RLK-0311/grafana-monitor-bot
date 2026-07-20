@@ -1,0 +1,2181 @@
+Grafana Dashboard Analysis
+
+
+====================================================================================================
+Dashboard : CM-RDS-ALERT
+URL       : https://monitoring.creditmantri.com/d/vL8ASiO7k/cm-rds-alert-85?orgId=1&refresh=5s&from=now-30m&to=now
+====================================================================================================
+Flot Gauges : 16
+Gauge[0] = 10.6
+Gauge[1] = 85.6
+Gauge[2] = 51.9
+Gauge[3] = 3.25
+Gauge[4] = 41.4
+Gauge[5] = 5.20
+Gauge[6] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+0%
+20%
+40%
+60%
+80%
+100%
+Gauge[7] = 
+Gauge[8] = 
+Gauge[9] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+0%
+20%
+40%
+60%
+80%
+100%
+
+Panel Titles : 7
+Title[0] = Panel RDS-DB > 85 %
+Title[1] = CM-RDS > 85% alert1
+Title[2] = DB Connection
+Title[3] = CM-RDS > 80% alert
+Title[4] = Write IOPS
+Title[5] = DB Connection
+Title[6] = Read IOPS
+
+Panel Content : 7
+Panel[0] = 10.6 | cis-ars-db | 85.6 | cm-cmol-db | 51.9 | cm-microservice | 3.25 | cm-verification-service | 41.4 | crm-db | 5.20 | openprojectadbapp
+Panel[1] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 0% | 20% | 40% | 60% | 80% | 100% | cis-ars-db | cm-cmol-db | cm-microservice | cm-verification-service | crm-db | openprojectadbapp
+Panel[2] = cis-ars-db | 67 | cm-cmol-db | 316 | cm-microservice | 33 | cm-verification-service | 5 | crm-db | 271 | openprojectadbapp | 2
+Panel[3] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 0% | 20% | 40% | 60% | 80% | 100% | cis-ars-db | cm-cmol-db | cm-microservice | cm-verification-service | crm-db | openprojectadbapp
+Panel[4] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0% | 2500% | 5000% | 7500% | 10000% | 12500% | cis-ars-db | cm-cmol-db | cm-microservice | cm-verification-service | crm-db | openprojectadbapp
+Panel[5] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0 | 100 | 200 | 300 | 400 | 500 | 600 | cis-ars-db | cm-cmol-db | cm-microservice | cm-verification-service | crm-db | openprojectadbapp
+Panel[6] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0 | 500 | 1 K | 1.50 K | 2 K | 2.50 K | 3 K | cis-ars-db | cm-cmol-db | cm-microservice | cm-verification-service | crm-db | openprojectadbapp
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : CM-CRON
+URL       : https://monitoring.creditmantri.com/d/CM-CRON/cm-cron-90?orgId=1&refresh=30s&from=now-30m&to=now
+====================================================================================================
+Flot Gauges : 15
+Gauge[0] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+40%
+60%
+80%
+100%
+120%
+Gauge[1] = 
+Gauge[2] = 
+Gauge[3] = 
+Gauge[4] = 
+Gauge[5] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+20%
+40%
+60%
+0%
+80%
+Gauge[6] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+64%
+64.5%
+65%
+63.5%
+Gauge[7] = 4.90%
+Gauge[8] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+4.90%
+4.95%
+5%
+5.05%
+Gauge[9] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+20%
+40%
+60%
+80%
+
+Panel Titles : 15
+Title[0] = CPU Busy
+Title[1] = RAM Used
+Title[2] = Root FS Used
+Title[3] = SWAP Used
+Title[4] = CPU Cores
+Title[5] = RootFS Total
+Title[6] = SWAP Used
+Title[7] = SWAP Total
+Title[8] = RAM Total
+Title[9] = Uptime
+Title[10] = Disk Space Used
+Title[11] = CPU Basic
+Title[12] = Memory Basic
+Title[13] = Network Traffic Basic
+Title[14] = Disk Space Used Basic
+
+Panel Content : 15
+Panel[0] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 40% | 60% | 80% | 100% | 120% | (((count(count(node_cpu_seconds_total{instance="172.31.48.213:9100",job="node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total...
+Panel[1] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 20% | 40% | 60% | 0% | 80% | {instance="172.31.48.213:9100", job="node_exporter", name="CM-Cron"}
+Panel[2] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 64% | 64.5% | 65% | 63.5% | {device="/dev/nvme0n1p1", fstype="ext4", instance="172.31.48.213:9100", job="node_exporter", mountpoint="/", name="CM-Cron"}
+Panel[3] = 4.90%
+Panel[4] = 4
+Panel[5] = 77 GiB
+Panel[6] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 4.90% | 4.95% | 5% | 5.05% | {instance="172.31.48.213:9100", job="node_exporter", name="CM-Cron"}
+Panel[7] = 8 GiB
+Panel[8] = 16 GiB
+Panel[9] = 18.2 week
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : AZURE-WAREHOUSE
+URL       : https://monitoring.creditmantri.com/d/Azure_Warehouse/azure_warehouse-90?orgId=1&refresh=30s&from=now-30m&to=now
+====================================================================================================
+Flot Gauges : 11
+Gauge[0] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+10%
+20%
+30%
+40%
+Gauge[1] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+3.50%
+4%
+4.50%
+5%
+5.50%
+6%
+Gauge[2] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+87.2%
+87.2%
+87.3%
+87.3%
+87.3%
+87.3%
+Gauge[3] = 3.01%
+Gauge[4] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+2%
+3%
+4%
+1%
+Gauge[5] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+50%
+100%
+150%
+Gauge[6] = bytes
+Gauge[7] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+25%
+50%
+75%
+100%
+Gauge[8] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0 B
+93.1 GiB
+186 GiB
+279 GiB
+373 GiB
+466 GiB
+559 GiB
+Gauge[9] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+-10 Mb/s
+0 b/s
+10 Mb/s
+20 Mb/s
+-20 Mb/s
+
+Panel Titles : 15
+Title[0] = CPU Busy
+Title[1] = RAM Used
+Title[2] = Root FS Used
+Title[3] = SWAP Used
+Title[4] = CPU Cores
+Title[5] = RootFS Total
+Title[6] = SWAP Used
+Title[7] = SWAP Total
+Title[8] = RAM Total
+Title[9] = Uptime
+Title[10] = Disk Space Used
+Title[11] = CPU Basic
+Title[12] = Memory Basic
+Title[13] = Network Traffic Basic
+Title[14] = Disk Space Used Basic
+
+Panel Content : 15
+Panel[0] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0% | 10% | 20% | 30% | 40% | (((count(count(node_cpu_seconds_total{instance="98.70.38.25:9100",job="node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mode...
+Panel[1] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 3.50% | 4% | 4.50% | 5% | 5.50% | 6% | {instance="98.70.38.25:9100", job="node_exporter", name="warehouse-Azure"}
+Panel[2] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 87.2% | 87.2% | 87.3% | 87.3% | 87.3% | 87.3% | {device="/dev/root", fstype="ext4", instance="98.70.38.25:9100", job="node_exporter", mountpoint="/", name="warehouse-Azure"}
+Panel[3] = 3.01%
+Panel[4] = 64
+Panel[5] = 387 GiB
+Panel[6] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 2% | 3% | 4% | 1% | {instance="98.70.38.25:9100", job="node_exporter", name="warehouse-Azure"}
+Panel[7] = 50 GiB
+Panel[8] = 504 GiB
+Panel[9] = 6.2 day
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : CRM-80%(CFU/ARS/REF)
+URL       : https://monitoring.creditmantri.com/d/CRMpa3/crm-80-cfu-ars-ref?orgId=1&refresh=30s&from=now-30m&to=now
+====================================================================================================
+Flot Gauges : 6
+Gauge[0] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+10%
+20%
+30%
+40%
+Gauge[1] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+20%
+40%
+60%
+Gauge[2] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+20%
+25%
+30%
+35%
+40%
+45%
+Gauge[3] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0 B
+4.34 EiB
+8.67 EiB
+13.0 EiB
+17.3 EiB
+Gauge[4] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+10%
+20%
+30%
+40%
+50%
+Gauge[5] = bytes
+
+Panel Titles : 9
+Title[0] = CPU Busy
+Title[1] = RAM Used
+Title[2] = Root FS Used
+Title[3] = RootFS Total
+Title[4] = CPU Cores
+Title[5] = RAM Total
+Title[6] = Uptime
+Title[7] = Memory Basic
+Title[8] = Disk Space Used
+
+Panel Content : 9
+Panel[0] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0% | 10% | 20% | 30% | 40% | (((count(count(node_cpu_seconds_total{instance="172.31.1.171:9100",job="node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mod...
+Panel[1] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0% | 20% | 40% | 60% | {instance="172.31.1.171:9100", job="node_exporter", name="CRM-ARS"} | {instance="172.31.1.214:9100", job="node_exporter", name="CRM-ARS1"} | {instance="172.3...
+Panel[2] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 20% | 25% | 30% | 35% | 40% | 45% | {device="/dev/root", fstype="ext4", instance="172.31.1.171:9100", job="node_exporter", mountpoint="/", name="CRM-ARS"} | {device="/dev/root", fs...
+Panel[3] = No data
+Panel[4] = No data
+Panel[5] = No data
+Panel[6] = No data
+Panel[7] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0 B | 4.34 EiB | 8.67 EiB | 13.0 EiB | 17.3 EiB | RAM Total | RAM Total | RAM Total | RAM Total | RAM Total | RAM Total | RAM Total | RAM Total | RAM Total | RAM Total | RAM Total ...
+Panel[8] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0% | 10% | 20% | 30% | 40% | 50% | bytes |  |  | {device="/dev/nvme0n1p15", fstype="vfat", instance="172.31.1.171:9100", job="node_exporter", mountpoint="/boot/efi", name="CRM-ARS"...
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : CRM-OPS-70%
+URL       : https://monitoring.creditmantri.com/d/CRM-OPSpa3/crm-ops-70?orgId=1&refresh=30s
+====================================================================================================
+Flot Gauges : 6
+Gauge[0] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+1%
+2%
+3%
+4%
+Gauge[1] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+21.8%
+22%
+22.2%
+22.4%
+22.6%
+Gauge[2] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+53.9%
+53.9%
+53.9%
+53.9%
+53.9%
+Gauge[3] = 
+Gauge[4] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+20%
+40%
+60%
+Gauge[5] = bytes
+
+Panel Titles : 10
+Title[0] = CPU Busy
+Title[1] = RAM Used
+Title[2] = Root FS Used
+Title[3] = SWAP Used
+Title[4] = RootFS Total
+Title[5] = RAM Total
+Title[6] = CPU Cores
+Title[7] = SWAP Total
+Title[8] = Uptime
+Title[9] = Disk Space Used
+
+Panel Content : 10
+Panel[0] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0% | 1% | 2% | 3% | 4% | (((count(count(node_cpu_seconds_total{instance="172.31.1.198:9100",job="node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mode='i...
+Panel[1] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 21.8% | 22% | 22.2% | 22.4% | 22.6% | {instance="172.31.1.198:9100", job="node_exporter", name="CRM-OPS"}
+Panel[2] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 53.9% | 53.9% | 53.9% | 53.9% | 53.9% | {device="/dev/nvme0n1p1", fstype="ext4", instance="172.31.1.198:9100", job="node_exporter", mountpoint="/", name="CRM-OPS"}
+Panel[3] = 
+Panel[4] = 19 GiB
+Panel[5] = 8 GiB
+Panel[6] = 4
+Panel[7] = No data
+Panel[8] = No data
+Panel[9] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0% | 20% | 40% | 60% | bytes |  |  | {device="/dev/nvme0n1p1", fstype="ext4", instance="172.31.1.198:9100", job="node_exporter", mountpoint="/", name="CRM-OPS"} |  |  | {device="lx...
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : CMOL-API
+URL       : https://monitoring.creditmantri.com/d/CMOL-APIpa3/cmol-api-80?orgId=1&from=now-30m&to=now&refresh=5s
+====================================================================================================
+Flot Gauges : 6
+Gauge[0] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+10%
+20%
+30%
+40%
+50%
+Gauge[1] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+40%
+42.5%
+45%
+47.5%
+50%
+Gauge[2] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+40%
+45%
+50%
+55%
+Gauge[3] = No data
+Gauge[4] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+20%
+40%
+60%
+Gauge[5] = bytes
+
+Panel Titles : 10
+Title[0] = CPU Busy
+Title[1] = RAM Used
+Title[2] = Root FS Used
+Title[3] = SWAP Used
+Title[4] = RootFS Total
+Title[5] = RAM Total
+Title[6] = CPU Cores
+Title[7] = SWAP Total
+Title[8] = Uptime
+Title[9] = Disk Space Used
+
+Panel Content : 10
+Panel[0] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 10% | 20% | 30% | 40% | 50% | (((count(count(node_cpu_seconds_total{instance="172.31.48.220:9100",job="node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{m...
+Panel[1] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 40% | 42.5% | 45% | 47.5% | 50% | {instance="172.31.48.220:9100", job="node_exporter", name="CMOL-API-M-IP1"} | {instance="172.31.48.29:9100", job="node_exporter", name="CMOL-API-M...
+Panel[2] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 40% | 45% | 50% | 55% | {device="/dev/nvme0n1p1", fstype="ext4", instance="172.31.48.220:9100", job="node_exporter", mountpoint="/", name="CMOL-API-M-IP1"} | {device="/dev/nvme0n1p1", fstype="ext4", instance="172.31.48.29:9100", job="node_exporter", mo...
+Panel[3] = No data
+Panel[4] = No data
+Panel[5] = No data
+Panel[6] = No data
+Panel[7] = No data
+Panel[8] = No data
+Panel[9] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0% | 20% | 40% | 60% | bytes |  |  | {device="/dev/nvme0n1p1", fstype="ext4", instance="172.31.48.220:9100", job="node_exporter", mountpoint="/", name="CMOL-API-M-IP1"} |  |  | {de...
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : DHUVEKAM AND ANEKAM
+URL       : https://monitoring.creditmantri.com/d/Dhuvekam/dhuvekam-and-anekam-90?orgId=1&refresh=30s&from=now-30m&to=now
+====================================================================================================
+Flot Gauges : 15
+Gauge[0] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+25%
+50%
+75%
+100%
+Gauge[1] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+50%
+60%
+70%
+80%
+90%
+100%
+Gauge[2] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+30%
+32.5%
+35%
+37.5%
+Gauge[3] = 
+Gauge[4] = 
+Gauge[5] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+10%
+20%
+30%
+40%
+Gauge[6] = bytes
+Gauge[7] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0%
+25%
+50%
+75%
+100%
+Gauge[8] = No data
+Gauge[9] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0 B
+0.250 B
+0.500 B
+0.750 B
+1 B
+
+Panel Titles : 14
+Title[0] = CPU Busy
+Title[1] = RAM Used
+Title[2] = Root FS Used
+Title[3] = RAM Total
+Title[4] = CPU Cores
+Title[5] = RootFS Total
+Title[6] = Uptime
+Title[7] = SWAP Total
+Title[8] = SWAP Used
+Title[9] = Disk Space Used
+Title[10] = CPU Basic
+Title[11] = Memory Basic
+Title[12] = Network Traffic Basic
+Title[13] = Disk Space Used Basic
+
+Panel Content : 14
+Panel[0] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0% | 25% | 50% | 75% | 100% | (((count(count(node_cpu_seconds_total{instance="172.31.48.186:9100",job="node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{m...
+Panel[1] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 50% | 60% | 70% | 80% | 90% | 100% | {instance="172.31.48.186:9100", job="node_exporter", name="Anekam-new"} | {instance="172.31.48.12:9100", job="node_exporter", name="CRM - CMOL ...
+Panel[2] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 30% | 32.5% | 35% | 37.5% | {device="/dev/nvme0n1p1", fstype="ext4", instance="172.31.48.186:9100", job="node_exporter", mountpoint="/", name="Anekam-new"} | {device="/dev/nvme0n1p...
+Panel[3] = node_memory_MemTotal_bytes{instance="172.31.48.186:9100", job="node_exporter", name="Anekam-new"} | 15 GiB | node_memory_MemTotal_bytes{instance="172.31.48.12:9100", job="node_exporter", name="CRM - CMOL - API - Dhuvekam"} | 15 GiB
+Panel[4] = count(count(node_cpu_seconds_total{instance="172.31.48.186:9100",job="node_exporter"}) by (cpu)) | 4 | count(count(node_cpu_seconds_total{instance="172.31.48.12:9100",job="node_exporter"}) by (cpu)) | 4
+Panel[5] = No data
+Panel[6] = No data
+Panel[7] = No data
+Panel[8] = {instance="172.31.48.186:9100", job="node_exporter", name="Anekam-new"} | {instance="172.31.48.12:9100", job="node_exporter", name="CRM - CMOL - API - Dhuvekam"}
+Panel[9] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0% | 10% | 20% | 30% | 40% | bytes |  |  | {device="/dev/nvme0n1p1", fstype="ext4", instance="172.31.48.186:9100", job="node_exporter", mountpoint="/", name="Anekam-new"} |  |  | {...
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : EC2-CPU-UTILISATION
+URL       : https://monitoring.creditmantri.com/d/NUQpqT27k/ec2-cpuutilization-80-alert?orgId=1
+====================================================================================================
+Flot Gauges : 89
+Gauge[0] = 36.1
+Gauge[1] = 0.718
+Gauge[2] = 4.07
+Gauge[3] = 81.2
+Gauge[4] = 0.308
+Gauge[5] = 11.4
+Gauge[6] = 30.2
+Gauge[7] = 24.9
+Gauge[8] = 25.0
+Gauge[9] = 0.400
+
+Panel Titles : 2
+Title[0] = EC2 - CPUUtilization > 80% alert
+Title[1] = EC2 - CPUUtilization > 80% alert
+
+Panel Content : 2
+Panel[0] = i-000f4b66cdea41a84 | 36.1 | i-0048418bbee20c50a | 0.718 | i-0065963d9a4523743 | 4.07 | i-007fbaaf22d1ec523 | 81.2 | i-00d22da1325a930a9 | 0.308 | i-00d7e1976c7555db8 | 11.4 | i-00e81d9fb5fb3f74f | 30.2 | i-01071c6b2afd526c1 | 24.9 | i-0111a7fe161e397e7 | 25.0 | i-012792d421249ea58 | 0.400 | i-012a5...
+Panel[1] = 36.1 | i-000f4b66cdea41a84 | 0.718 | i-0048418bbee20c50a | 4.07 | i-0065963d9a4523743 | 81.2 | i-007fbaaf22d1ec523 | 0.308 | i-00d22da1325a930a9 | 11.4 | i-00d7e1976c7555db8 | 30.2 | i-00e81d9fb5fb3f74f | 24.9 | i-01071c6b2afd526c1 | 25.0 | i-0111a7fe161e397e7 | 0.400 | i-012792d421249ea58 | 19.9 | ...
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : ELK-MASTER
+URL       : https://monitoring.creditmantri.com/d/yt08eCbVz/elk_master-70?orgId=1&from=now-30m&to=now&refresh=5s
+====================================================================================================
+Flot Gauges : 4
+Gauge[0] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+10
+20
+30
+40
+50
+60
+Gauge[1] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+74
+75
+73.8
+74.8
+73.5
+74.3
+74.5
+Gauge[2] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+0
+10
+20
+30
+40
+50
+Gauge[3] = 17:16
+17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+42
+43
+41.5
+42.5
+43.5
+
+Panel Titles : 4
+Title[0] = CPU
+Title[1] = RAM
+Title[2] = Disk Space Used
+Title[3] = Root FS Used
+
+Panel Content : 4
+Panel[0] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 10 | 20 | 30 | 40 | 50 | 60 | (((count(count(node_cpu_seconds_total{instance="172.31.49.217:9100",job="node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{m...
+Panel[1] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 74 | 75 | 73.8 | 74.8 | 73.5 | 74.3 | 74.5 | {instance="172.31.49.217:9100", job="node_exporter", name="Elk_master"}
+Panel[2] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 0 | 10 | 20 | 30 | 40 | 50 | {device="/dev/nvme0n1p15", fstype="vfat", instance="172.31.49.217:9100", job="node_exporter", mountpoint="/boot/efi", name="Elk_master"} | {device="/de...
+Panel[3] = 17:16 | 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 42 | 43 | 41.5 | 42.5 | 43.5 | {device="/dev/root", fstype="ext4", instance="172.31.49.217:9100", job="node_exporter", mountpoint="/", name="Elk_master"}
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : MONGO-DOCKER-LOGIN
+URL       : https://monitoring.creditmantri.com/d/tmsOtSxZkyu/mongo-docker-login?orgId=1&from=now-30m&to=now
+====================================================================================================
+Flot Gauges : 7
+Gauge[0] = 81%
+Gauge[1] = 56%
+Gauge[2] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+0
+-100 Mil
+-75 Mil
+-50 Mil
+-25 Mil
+25 Mil
+Gauge[3] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+0
+500 K
+1 Mil
+1.50 Mil
+2 Mil
+2.50 Mil
+3 Mil
+Gauge[4] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+0
+500 K
+1 Mil
+1.50 Mil
+2 Mil
+2.50 Mil
+3 Mil
+Gauge[5] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+0
+2.50 K
+5 K
+7.50 K
+10 K
+12.5 K
+Gauge[6] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+0
+2.50 K
+5 K
+7.50 K
+10 K
+12.5 K
+
+Panel Titles : 9
+Title[0] = CPU utilization
+Title[1] = Ram utilization
+Title[2] = Total network traffic outbound (+) and inbound (-) [bytes/sec]
+Title[3] = Inbound network traffic [bytes/sec]
+Title[4] = Outbound network traffic[bytes/sec]
+Title[5] = Inbound network packets[IOPS]
+Title[6] = Outbound network packets[IOPS]
+Title[7] = The following metrics are reported for EC2 Instance Store Volumes. For Amazon EBS volumes, see the EBS dashboard.
+Title[8] = 
+
+Panel Content : 9
+Panel[0] = 81%
+Panel[1] = 56%
+Panel[2] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 0 | -100 Mil | -75 Mil | -50 Mil | -25 Mil | 25 Mil
+Panel[3] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 0 | 500 K | 1 Mil | 1.50 Mil | 2 Mil | 2.50 Mil | 3 Mil | NetworkIn_Sum
+Panel[4] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 0 | 500 K | 1 Mil | 1.50 Mil | 2 Mil | 2.50 Mil | 3 Mil | NetworkIn_Sum
+Panel[5] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 0 | 2.50 K | 5 K | 7.50 K | 10 K | 12.5 K | NetworkPacketsIn_Sum
+Panel[6] = 17:20 | 17:25 | 17:30 | 17:35 | 17:40 | 17:45 | 0 | 2.50 K | 5 K | 7.50 K | 10 K | 12.5 K | NetworkPacketsIn_Sum
+Panel[7] = 
+Panel[8] = For more information about avaialble metrics from Amazon EC2, visit the List of Available CloudWatch Metrics for Your EC2 Instances in the Amazon documentation. |  | For additional metrics and 1-minute granularity, enable Detailed Monitoring for your Amazon EC2 instances. |  | This dashboard has bee...
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : WINDOWS EXPORTER DASHBOARD
+URL       : https://monitoring.creditmantri.com/d/IV0hu1m7z/windows-exporter-dashboard?orgId=1&refresh=10s&from=now-30m&to=now
+====================================================================================================
+Flot Gauges : 15
+Gauge[0] = 7.03%
+Gauge[1] = 52.4%
+Gauge[2] = 80.3%
+Gauge[3] = 8 kb/s
+Gauge[4] = 63.4 GB
+Gauge[5] = N/A
+Gauge[6] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+2.79 GiB
+3.73 GiB
+4.66 GiB
+5.59 GiB
+6.52 GiB
+7.45 GiB
+8.38 GiB
+9.31 GiB
+Gauge[7] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+0%
+0.500%
+1%
+1.50%
+2%
+2.50%
+3%
+Gauge[8] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+0
+1
+2
+0.500
+1.50
+Gauge[9] = 17:20
+17:25
+17:30
+17:35
+17:40
+17:45
+0 B
+4.77 MiB
+9.54 MiB
+14.3 MiB
+19.1 MiB
+23.8 MiB
+
+Panel Titles : 18
+Title[0] = Uptime
+Title[1] = CPU Usage
+Title[2] = Memory Usage
+Title[3] = Disk Usage
+Title[4] = Bandwidth
+Title[5] = Hard Disk Usage
+Title[6] = Processors
+Title[7] = RAM
+Title[8] = Partitions Free Space
+Title[9] = Total SWAP
+Title[10] = Memory Details
+Title[11] = CPU Usage
+Title[12] = CPU Load
+Title[13] = Flow Per Hour
+Title[14] = Network discarded/error packets
+Title[15] = Bandwidth
+Title[16] = Hard disk i/o ops total
+Title[17] = Disk R/W
+
+Panel Content : 18
+Panel[0] = N/A
+Panel[1] = 7.03%
+Panel[2] = 52.4%
+Panel[3] = 80.3%
+Panel[4] = 8 kb/s
+Panel[5] = 80%
+Panel[6] = 2
+Panel[7] = 7.9 GiB
+Panel[8] = 63.4 GB
+Panel[9] = N/A
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : WINDOWS_SFTP
+URL       : https://monitoring.creditmantri.com/d/ZVVc8wAIz/windows_sftp?orgId=1&refresh=5s
+====================================================================================================
+Flot Gauges : 2
+Gauge[0] = 17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+63.4 Bil
+63.4 Bil
+63.4 Bil
+63.4 Bil
+63.4 Bil
+63.4 Bil
+63.4 Bil
+63.4 Bil
+Gauge[1] = 17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+5.55 Bil
+5.56 Bil
+5.57 Bil
+5.58 Bil
+5.59 Bil
+5.60 Bil
+
+Panel Titles : 2
+Title[0] = WSFTP-DISK
+Title[1] = WSFTP-RAM
+
+Panel Content : 2
+Panel[0] = 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 63.4 Bil | 63.4 Bil | 63.4 Bil | 63.4 Bil | 63.4 Bil | 63.4 Bil | 63.4 Bil | 63.4 Bil | {__name__="windows_logical_disk_free_bytes", instance="172.31.16.131:9182", job="WMI_exporter", name="windows_sftp", volume="C:"}
+Panel[1] = 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 5.55 Bil | 5.56 Bil | 5.57 Bil | 5.58 Bil | 5.59 Bil | 5.60 Bil | {__name__="windows_os_virtual_memory_free_bytes", instance="172.31.16.131:9182", job="WMI_exporter", name="windows_sftp"}
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : NODE EXPORTER FULL-RSTUDIO-AZURE
+URL       : https://monitoring.creditmantri.com/d/iYnoO6Gnk/node-exporter-full?orgId=1&refresh=10s&from=now-30m&to=now&var-DS_PROMETHEUS=Prometheus&var-job=node_exporter&var-name=Rstudio-Azure&var-node=20.244.12.173:9100&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B
+====================================================================================================
+Flot Gauges : 21
+Gauge[0] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0%
+10%
+20%
+30%
+40%
+Gauge[1] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+5%
+10%
+15%
+20%
+25%
+Gauge[2] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+69.1%
+69.1%
+69.1%
+69.1%
+69.1%
+69.1%
+Gauge[3] = 13.5%
+Gauge[4] = 13%
+Gauge[5] = 69.1%
+Gauge[6] = 0.974%
+Gauge[7] = 13.5%
+Gauge[8] = 17.8%
+Gauge[9] = 7.25%
+
+Panel Titles : 29
+Title[0] = CPU Busy
+Title[1] = RAM Used
+Title[2] = Root FS Used
+Title[3] = CPU Busy
+Title[4] = RAM Used
+Title[5] = Root FS Used
+Title[6] = SWAP Used
+Title[7] = CPU Cores
+Title[8] = RootFS Total
+Title[9] = Uptime
+Title[10] = RAM Total
+Title[11] = SWAP Total
+Title[12] = CPU Busy
+Title[13] = Sys Load (5m avg)
+Title[14] = Sys Load (15m avg)
+Title[15] = RAM Used
+Title[16] = Root FS Used
+Title[17] = SWAP Used
+Title[18] = RootFS Total
+Title[19] = RAM Total
+
+Panel Content : 29
+Panel[0] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0% | 10% | 20% | 30% | 40% | (((count(count(node_cpu_seconds_total{instance="20.244.12.173:9100",job="node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mo...
+Panel[1] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 5% | 10% | 15% | 20% | 25% | {instance="20.244.12.173:9100", job="node_exporter", name="Rstudio-Azure"}
+Panel[2] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 69.1% | 69.1% | 69.1% | 69.1% | 69.1% | 69.1% | {device="/dev/root", fstype="ext4", instance="20.244.12.173:9100", job="node_exporter", mountpoint="/", name="Rstudio-Azure"}
+Panel[3] = 13.5%
+Panel[4] = 13%
+Panel[5] = 69.1%
+Panel[6] = 0.974%
+Panel[7] = 4
+Panel[8] = 124 GiB
+Panel[9] = 35.7 week
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : NODE EXPORTER FULL-KAFKA AZURE
+URL       : https://monitoring.creditmantri.com/d/iYnoO6Gnk/node-exporter-full?orgId=1&refresh=10s&from=now-30m&to=now&var-DS_PROMETHEUS=Prometheus&var-job=node_exporter&var-name=kafka-azure&var-node=172.31.49.119:9100&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B
+====================================================================================================
+Flot Gauges : 21
+Gauge[0] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+40%
+60%
+80%
+100%
+Gauge[1] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+30%
+35%
+40%
+45%
+Gauge[2] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+74.3%
+74.4%
+74.5%
+74.6%
+74.7%
+74.2%
+Gauge[3] = 54.7%
+Gauge[4] = 35%
+Gauge[5] = 74.7%
+Gauge[6] = 7.38%
+Gauge[7] = 54.7%
+Gauge[8] = 156%
+Gauge[9] = 157%
+
+Panel Titles : 29
+Title[0] = CPU Busy
+Title[1] = RAM Used
+Title[2] = Root FS Used
+Title[3] = CPU Busy
+Title[4] = RAM Used
+Title[5] = Root FS Used
+Title[6] = SWAP Used
+Title[7] = CPU Cores
+Title[8] = RootFS Total
+Title[9] = Uptime
+Title[10] = RAM Total
+Title[11] = SWAP Total
+Title[12] = CPU Busy
+Title[13] = Sys Load (5m avg)
+Title[14] = Sys Load (15m avg)
+Title[15] = RAM Used
+Title[16] = Root FS Used
+Title[17] = SWAP Used
+Title[18] = RootFS Total
+Title[19] = RAM Total
+
+Panel Content : 29
+Panel[0] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 40% | 60% | 80% | 100% | (((count(count(node_cpu_seconds_total{instance="172.31.49.119:9100",job="node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mode='...
+Panel[1] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 30% | 35% | 40% | 45% | {instance="172.31.49.119:9100", job="node_exporter", name="kafka-azure"}
+Panel[2] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 74.3% | 74.4% | 74.5% | 74.6% | 74.7% | 74.2% | {device="/dev/root", fstype="ext4", instance="172.31.49.119:9100", job="node_exporter", mountpoint="/", name="kafka-azure"}
+Panel[3] = 54.7%
+Panel[4] = 35%
+Panel[5] = 74.7%
+Panel[6] = 7.38%
+Panel[7] = 4
+Panel[8] = 145 GiB
+Panel[9] = 33.5 week
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : NODE EXPORTER FULL-CDC
+URL       : https://monitoring.creditmantri.com/d/iYnoO6Gnk/node-exporter-full?orgId=1&refresh=10s&from=now-30m&to=now&var-DS_PROMETHEUS=Prometheus&var-job=node_exporter&var-name=CDC&var-node=172.31.49.20:9100&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B
+====================================================================================================
+Flot Gauges : 21
+Gauge[0] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+40%
+45%
+50%
+55%
+60%
+65%
+Gauge[1] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+46%
+46.5%
+47%
+47.5%
+48%
+Gauge[2] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+49%
+49.2%
+49.4%
+49.6%
+Gauge[3] = 54.1%
+Gauge[4] = 46%
+Gauge[5] = 49.5%
+Gauge[6] = 
+Gauge[7] = 54.1%
+Gauge[8] = 132%
+Gauge[9] = 127%
+
+Panel Titles : 29
+Title[0] = CPU Busy
+Title[1] = RAM Used
+Title[2] = Root FS Used
+Title[3] = CPU Busy
+Title[4] = RAM Used
+Title[5] = Root FS Used
+Title[6] = SWAP Used
+Title[7] = CPU Cores
+Title[8] = RootFS Total
+Title[9] = Uptime
+Title[10] = RAM Total
+Title[11] = SWAP Total
+Title[12] = CPU Busy
+Title[13] = Sys Load (5m avg)
+Title[14] = Sys Load (15m avg)
+Title[15] = RAM Used
+Title[16] = Root FS Used
+Title[17] = SWAP Used
+Title[18] = RootFS Total
+Title[19] = RAM Total
+
+Panel Content : 29
+Panel[0] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 40% | 45% | 50% | 55% | 60% | 65% | (((count(count(node_cpu_seconds_total{instance="172.31.49.20:9100",job="node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_to...
+Panel[1] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 46% | 46.5% | 47% | 47.5% | 48% | {instance="172.31.49.20:9100", job="node_exporter", name="CDC"}
+Panel[2] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 49% | 49.2% | 49.4% | 49.6% | {device="/dev/root", fstype="ext4", instance="172.31.49.20:9100", job="node_exporter", mountpoint="/", name="CDC"}
+Panel[3] = 54.1%
+Panel[4] = 46%
+Panel[5] = 49.5%
+Panel[6] = 
+Panel[7] = 4
+Panel[8] = 484 GiB
+Panel[9] = 3.8 day
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : AWS ELASTICCHE REDIS - PRELOGIN
+URL       : https://monitoring.creditmantri.com/d/awsredis/aws-elasticache-redis?orgId=1&from=now-30m&to=now&var-datasource=CloudWatch&var-region=default&var-cacheclusterId=prelogin-001&var-cachenodeid=0001
+====================================================================================================
+Flot Gauges : 6
+Gauge[0] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+100
+200
+300
+400
+Gauge[1] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+100
+200
+300
+400
+500
+Gauge[2] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+1
+2
+0.500
+1.50
+2.50
+0
+10
+20
+30
+Gauge[3] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+1
+0.250
+0.500
+0.750
+0
+250000
+500000
+750000
+1000000
+Gauge[4] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0 B
+4.66 GiB
+9.31 GiB
+14.0 GiB
+18.6 GiB
+0 B
+0.250 B
+0.500 B
+0.750 B
+1 B
+Gauge[5] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+1
+0.250
+0.500
+0.750
+0 s
+250 ms
+500 ms
+750 ms
+1 s
+
+Panel Titles : 6
+Title[0] = Cache
+Title[1] = Cmds
+Title[2] = Connections
+Title[3] = SaveInProgress / CurrItems
+Title[4] = BytesUsedForCache / ReplicationBytes
+Title[5] = HyperLogLogBasedCmds / ReplicationLag
+
+Panel Content : 6
+Panel[0] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 100 | 200 | 300 | 400 | 	min	max	avg	current |  | CacheHits_Average | 	227.000	338.000	281.233	318.000 |  | CacheMisses_Average | 	1.000	16.000	6.167	3.000 |  | Reclaimed_Avera...
+Panel[1] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 100 | 200 | 300 | 400 | 500 | 	min	max	avg	current |  | StringBasedCmds_Average | 	268.000	395.000	336.967	393.000 |  | GetTypeCmds_Average | 	229.000	345.000	287.400	321.000 |...
+Panel[2] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 1 | 2 | 0.500 | 1.50 | 2.50 | 0 | 10 | 20 | 30 | 	min	max	avg	current |  | NewConnections_Average | 	0	2.000	0.267	2.000 |  | CurrConnections_Average | 	29.000	29.000	29.000	29...
+Panel[3] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 1 | 0.250 | 0.500 | 0.750 | 0 | 250000 | 500000 | 750000 | 1000000 | 	min	max	avg	current |  | SaveInProgress_Average | 	0	0	0	0 |  | CurrItems_Average | 	721865.000	721889.000...
+Panel[4] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 B | 4.66 GiB | 9.31 GiB | 14.0 GiB | 18.6 GiB | 0 B | 0.250 B | 0.500 B | 0.750 B | 1 B | 	min	max	avg	current |  | BytesUsedForCache_Average | 	18.079 GiB	18.080 GiB	18.079 GiB	...
+Panel[5] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 1 | 0.250 | 0.500 | 0.750 | 0 s | 250 ms | 500 ms | 750 ms | 1 s | 	min	max	avg	current |  | HyperLogLogBasedCmds_Average | 				 |  | ReplicationLag_Average | 	0 s	0 s	0 s	0 s
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : AWS ELASTICCHE REDIS - CMOL-CRM
+URL       : https://monitoring.creditmantri.com/d/awsredis/aws-elasticache-redis?orgId=1&from=now-30m&to=now&var-datasource=CloudWatch&var-region=default&var-cacheclusterId=creditmantri-cmolcrm-1-001&var-cachenodeid=0001
+====================================================================================================
+Flot Gauges : 6
+Gauge[0] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+50000
+100000
+150000
+Gauge[1] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+100000
+200000
+300000
+Gauge[2] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+10000
+20000
+30000
+40000
+0
+1000
+2000
+3000
+4000
+Gauge[3] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+1
+0.250
+0.500
+0.750
+0
+5000000
+10000000
+15000000
+20000000
+Gauge[4] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0 B
+954 MiB
+1.86 GiB
+2.79 GiB
+3.73 GiB
+4.66 GiB
+0 B
+0.250 B
+0.500 B
+0.750 B
+1 B
+Gauge[5] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+1
+0.250
+0.500
+0.750
+0 s
+250 ms
+500 ms
+750 ms
+1 s
+
+Panel Titles : 6
+Title[0] = Cache
+Title[1] = Cmds
+Title[2] = Connections
+Title[3] = SaveInProgress / CurrItems
+Title[4] = BytesUsedForCache / ReplicationBytes
+Title[5] = HyperLogLogBasedCmds / ReplicationLag
+
+Panel Content : 6
+Panel[0] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 50000 | 100000 | 150000 | 	min	max	avg	current |  | CacheHits_Average | 	59802.000	127604.000	95381.100	88239.000 |  | CacheMisses_Average | 	120059.000	126660.000	124834.867	1...
+Panel[1] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 100000 | 200000 | 300000 | 	min	max	avg	current |  | GetTypeCmds_Average | 	184631.000	253405.000	220216.367	211291.000 |  | SortedSetBasedCmds_Average | 	105165.000	110148.000...
+Panel[2] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 10000 | 20000 | 30000 | 40000 | 0 | 1000 | 2000 | 3000 | 4000 | 	min	max	avg	current |  | NewConnections_Average | 	19173.000	30590.000	26242.933	27166.000 |  | CurrConnections...
+Panel[3] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 1 | 0.250 | 0.500 | 0.750 | 0 | 5000000 | 10000000 | 15000000 | 20000000 | 	min	max	avg	current |  | SaveInProgress_Average | 	0	0	0	0 |  | CurrItems_Average | 	17196553.000	17...
+Panel[4] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 B | 954 MiB | 1.86 GiB | 2.79 GiB | 3.73 GiB | 4.66 GiB | 0 B | 0.250 B | 0.500 B | 0.750 B | 1 B | 	min	max	avg	current |  | BytesUsedForCache_Average | 	4.017 GiB	4.050 GiB	4.0...
+Panel[5] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 1 | 0.250 | 0.500 | 0.750 | 0 s | 250 ms | 500 ms | 750 ms | 1 s | 	min	max	avg	current |  | HyperLogLogBasedCmds_Average | 				 |  | ReplicationLag_Average | 	0 s	0 s	0 s	0 s
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : AWS ELASTICCHE REDIS - CM-CG-AE
+URL       : https://monitoring.creditmantri.com/d/awsredis/aws-elasticache-redis?orgId=1&from=now-30m&to=now&var-datasource=CloudWatch&var-region=default&var-cacheclusterId=cm-cg-ae-new-001&var-cachenodeid=0001
+====================================================================================================
+Flot Gauges : 6
+Gauge[0] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+2500
+5000
+7500
+10000
+Gauge[1] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+5000
+10000
+15000
+20000
+Gauge[2] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+250
+500
+750
+1000
+0
+50
+100
+150
+Gauge[3] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+1
+0.250
+0.500
+0.750
+0
+1000
+2000
+3000
+4000
+5000
+Gauge[4] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0 B
+47.7 MiB
+95.4 MiB
+143 MiB
+0 B
+0.250 B
+0.500 B
+0.750 B
+1 B
+Gauge[5] = 17:18
+17:20
+17:22
+17:24
+17:26
+17:28
+17:30
+17:32
+17:34
+17:36
+17:38
+17:40
+17:42
+17:44
+17:46
+0
+1
+0.250
+0.500
+0.750
+0 s
+250 ms
+500 ms
+750 ms
+1 s
+
+Panel Titles : 6
+Title[0] = Cache
+Title[1] = Cmds
+Title[2] = Connections
+Title[3] = SaveInProgress / CurrItems
+Title[4] = BytesUsedForCache / ReplicationBytes
+Title[5] = HyperLogLogBasedCmds / ReplicationLag
+
+Panel Content : 6
+Panel[0] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 2500 | 5000 | 7500 | 10000 | 	min	max	avg	current |  | CacheHits_Average | 	5141.000	8363.000	6350.900	5872.000 |  | CacheMisses_Average | 	4999.000	6502.000	5268.333	5109.000 ...
+Panel[1] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 5000 | 10000 | 15000 | 20000 | 	min	max	avg	current |  | GetTypeCmds_Average | 	10439.000	14865.000	11619.233	10981.000 |  | SortedSetBasedCmds_Average | 	7714.000	13960.000	81...
+Panel[2] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 250 | 500 | 750 | 1000 | 0 | 50 | 100 | 150 | 	min	max	avg	current |  | NewConnections_Average | 	439.000	689.000	555.233	536.000 |  | CurrConnections_Average | 	126.000	133.00...
+Panel[3] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 1 | 0.250 | 0.500 | 0.750 | 0 | 1000 | 2000 | 3000 | 4000 | 5000 | 	min	max	avg	current |  | SaveInProgress_Average | 	0	0	0	0 |  | CurrItems_Average | 	3347.000	3978.000	3604....
+Panel[4] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 B | 47.7 MiB | 95.4 MiB | 143 MiB | 0 B | 0.250 B | 0.500 B | 0.750 B | 1 B | 	min	max	avg	current |  | BytesUsedForCache_Average | 	98.297 MiB	114.888 MiB	105.025 MiB	98.412 MiB...
+Panel[5] = 17:18 | 17:20 | 17:22 | 17:24 | 17:26 | 17:28 | 17:30 | 17:32 | 17:34 | 17:36 | 17:38 | 17:40 | 17:42 | 17:44 | 17:46 | 0 | 1 | 0.250 | 0.500 | 0.750 | 0 s | 250 ms | 500 ms | 750 ms | 1 s | 	min	max	avg	current |  | HyperLogLogBasedCmds_Average | 				 |  | ReplicationLag_Average | 	0 s	0 s	0 s	0 s
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : AWS ELASTICSEARCH
+URL       : https://monitoring.creditmantri.com/d/eCN_s8yWk/aws-elasticsearch?orgId=1&refresh=1m&from=now-30m&to=now&var-datasource=CloudWatch&var-region=default&var-domainName=cmol-es-uat&var-clientId=980326058463
+====================================================================================================
+Flot Gauges : 34
+Gauge[0] = 17:20
+17:30
+17:40
+0
+1
+2
+Gauge[1] = 17:20
+17:30
+17:40
+0
+1
+2
+Gauge[2] = 17:20
+17:30
+17:40
+0
+1
+2
+Gauge[3] = 17:20
+17:30
+17:40
+0
+1
+2
+Gauge[4] = 17:20
+17:30
+17:40
+0
+1
+2
+Gauge[5] = 17:20
+17:30
+17:40
+60.000 GB
+80.000 GB
+100.000 GB
+40.000 GB
+Gauge[6] = 17:20
+17:30
+17:40
+0
+1
+2
+Gauge[7] = 17:20
+17:30
+17:40
+0
+1
+-1
+Gauge[8] = 17:20
+17:30
+17:40
+0
+1
+-1
+Gauge[9] = 17:20
+17:30
+17:40
+0
+1
+-1
+
+Panel Titles : 29
+Title[0] = Cluster Status
+Title[1] = Cluster Writes Status
+Title[2] = Master instance connection status
+Title[3] = Snapshot failure status
+Title[4] = Total nodes
+Title[5] = Total free storage space
+Title[6] = Kibana Status
+Title[7] = Deleted Documents
+Title[8] = Searchable documents
+Title[9] = Indexing Rate
+Title[10] = SearchRate
+Title[11] = Indexing Latency
+Title[12] = Search Latency
+Title[13] = HTTP Requests by Response code
+Title[14] = Invalid Host Header Requests
+Title[15] = Write Thread Pool
+Title[16] = Index Thread Pool
+Title[17] = Search Thread Pool
+Title[18] = Merge Thread Pool
+Title[19] = Maximum CPU Utilization
+
+Panel Content : 29
+Panel[0] = 17:20 | 17:30 | 17:40 | 0 | 1 | 2 | Green | Yellow | Red
+Panel[1] = 17:20 | 17:30 | 17:40 | 0 | 1 | 2 | Green | Red
+Panel[2] = 17:20 | 17:30 | 17:40 | 0 | 1 | 2 | Green | Red
+Panel[3] = 17:20 | 17:30 | 17:40 | 0 | 1 | 2 | Green | Red
+Panel[4] = 17:20 | 17:30 | 17:40 | 0 | 1 | 2 | Nodes_Minimum
+Panel[5] = 17:20 | 17:30 | 17:40 | 60.000 GB | 80.000 GB | 100.000 GB | 40.000 GB | FreeStorageSpace_Sum
+Panel[6] = 17:20 | 17:30 | 17:40 | 0 | 1 | 2 | Green | Yellow | Red
+Panel[7] = 17:20 | 17:30 | 17:40 | 0 | 1 | -1 | DeletedDocuments_Average
+Panel[8] = 17:20 | 17:30 | 17:40 | 0 | 1 | -1 | SearchableDocuments_Average
+Panel[9] = 17:20 | 17:30 | 17:40 | 0 | 1 | -1 | Operations/min | IndexingRate_Average
+
+Finished Dashboard
+
+====================================================================================================
+Dashboard : KAFKA CDC
+URL       : https://kafka-cdc.creditmantri.com/ui/clusters/local/consumer-groups?sortBy=STATE&sortDirection=desc&page=1&perPage=25
+====================================================================================================
+Flot Gauges : 0
+
+Panel Titles : 0
+
+Panel Content : 0
+
+Finished Dashboard

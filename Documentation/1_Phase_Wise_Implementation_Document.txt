@@ -1,0 +1,29 @@
+Phase-wise Implementation - Grafana Monitor Bot
+
+Phase 1: Project Setup - Created Python virtual environment. - Installed
+Playwright and project dependencies. - Organized config/, src/,
+browser/, screenshots/, logs/.
+
+Phase 2: Browser Automation - Implemented BrowserManager using
+Playwright persistent context. - Reused browser profile for
+authenticated sessions.
+
+Phase 3: Dashboard Automation - Read dashboard URLs from
+configuration. - Opened dashboards and waited for rendering. - Captured
+screenshots.
+
+Phase 4: Metric Extraction - Parsed dashboard panels. - Extracted CPU,
+Memory, Disk, Network and other metrics. - Converted dashboard text into
+structured values.
+
+Phase 5: Threshold Validation - Compared metrics against configured
+thresholds. - Identified abnormal values.
+
+Phase 6: Logging - Stored execution details and errors in logs/bot.log.
+
+Phase 7: Cron Automation - Scheduled bot.py to execute every hour during
+selected shifts. - Used virtual environment Python directly.
+
+Phase 8: WhatsApp Integration (In Progress) - Persistent WhatsApp
+profile. - Automatic screenshot upload. - Automatic cleanup after
+sending.

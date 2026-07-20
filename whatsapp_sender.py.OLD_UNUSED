@@ -1,0 +1,216 @@
+from playwright.sync_api import sync_playwright
+import yaml
+import os
+import time
+
+
+class WhatsAppSender:
+    def __init__(self):
+        with open("config/whatsapp.yaml", "r") as f:
+            self.config = yaml.safe_load(f)
+        self.chat_name = self.config["chat_name"]
+        self.headless = self.config["browser"]["headless"]
+        self.profile = "browser/whatsapp_profile"
+        os.makedirs(self.profile, exist_ok=True)
+
+    def send_message(self, message, image_path=None):
+        with sync_playwright() as p:
+            context = p.chromium.launch_persistent_context(
+                user_data_dir=self.profile,
+                headless=self.headless,
+                args=[
+                    "--start-maximized"
+                ],
+                no_viewport=True,
+                viewport=None
+            )
+            try:
+                page = context.pages[0] if context.pages else context.new_page()
+
+                print("Opening WhatsApp...")
+                page.goto(
+                    "https://web.whatsapp.com",
+                    wait_until="domcontentloaded"
+                )
+
+                print("Waiting for WhatsApp to load...")
+                search = page.get_by_role("textbox").first
+                search.wait_for(timeout=60000)
+                print("WhatsApp Loaded Successfully")
+
+                print("Searching chat...")
+                search.click()
+                search.fill("")
+                # Use real keystrokes so WhatsApp's search/autocomplete
+                # picks up the input reliably.
+                search.press_sequentially(self.chat_name, delay=30)
+                page.wait_for_timeout(2000)
+
+                print("Selecting chat...")
+                search_name = self.chat_name.split("(")[0].strip()
+
+                chat = page.locator(
+                    f'span[title="{search_name}"]'
+                )
+
+                if chat.count() == 0:
+                    raise Exception(
+                        f"Chat '{search_name}' not found."
+                    )
+
+                chat.first.click()
+
+                header = page.get_by_test_id("conversation-header")
+                header.wait_for(timeout=10000)
+                header_text = header.inner_text()
+                print(f"Opened Chat : {header_text}")
+
+                page.screenshot(path="whatsapp_chat.png", full_page=True)
+                page.pause()
+
+                if search_name.lower() not in header_text.lower():
+                    raise Exception(
+                        f"Wrong chat opened. Expected '{search_name}' "
+                        f"but found '{header_text}'"
+                    )
+
+                if image_path:
+                    print("Opening attachment menu...")
+
+                    attach_button = page.get_by_role("button", name="Attach")
+                    attach_button.wait_for(timeout=10000)
+                    attach_button.click()
+
+                    # Explicitly select "Photos & videos" (confirmed via
+                    # inspect_attach_menu.py). Without this click, uploads
+                    # were defaulting to the Sticker Maker flow instead of
+                    # a normal photo message.
+                    #
+                    # NOTE: this menu item is not exposed with a proper
+                    # ARIA button role (confirmed via a debug screenshot
+                    # showing the menu open but role-based lookup still
+                    # timing out), so we match on visible text instead.
+                    photos_option = page.get_by_text(
+                        "Photos & videos", exact=True
+                    )
+
+                    try:
+                        photos_option.wait_for(timeout=10000)
+                    except Exception:
+                        page.screenshot(path="debug_attach_menu_missing.png")
+                        raise
+
+                    photos_option.click()
+
+                    print("Uploading image...")
+
+                    # Two file inputs exist at this point: one scoped to
+                    # the Sticker Maker (accept="image/*" only) and the
+                    # real Photos & videos picker (also accepts video,
+                    # confirmed via a strict-mode error listing both).
+                    # Target the video-accepting one specifically so we
+                    # never land back on the Sticker Maker.
+                    file_input = page.locator(
+                        'input[type="file"][accept*="video"]'
+                    )
+                    file_input.set_input_files(image_path)
+
+                    # WhatsApp shows different screens depending on how the
+                    # image got attached (single-image editor vs. a
+                    # multi-select gallery picker), and "Send" buttons in
+                    # each live in different, inconsistent DOM containers.
+                    # Rather than guess the container, poll for whichever
+                    # "Send"-named button is actually VISIBLE right now.
+                    send_locator = page.get_by_role("button", name="Send")
+                    send_button = None
+                    deadline = time.time() + 15
+                    while time.time() < deadline:
+                        for i in range(send_locator.count()):
+                            candidate = send_locator.nth(i)
+                            if candidate.is_visible():
+                                send_button = candidate
+                                break
+                        if send_button:
+                            break
+                        page.wait_for_timeout(300)
+
+                    if send_button is None:
+                        page.screenshot(path="debug_send_button_missing.png")
+                        raise Exception(
+                            "Could not find a visible Send button on the "
+                            "image preview screen."
+                        )
+
+                    # Wait for the upload/processing spinner on the image
+                    # thumbnail to finish before doing anything else. While
+                    # it's spinning, clicking Send has no effect.
+                    print("Waiting for image to finish uploading...")
+                    spinner = page.locator(
+                        'div[role="progressbar"], '
+                        '[data-icon="spinner"], '
+                        '[aria-label="Uploading"]'
+                    )
+                    spinner_deadline = time.time() + 30
+                    while time.time() < spinner_deadline:
+                        visible_spinners = 0
+                        for i in range(spinner.count()):
+                            if spinner.nth(i).is_visible():
+                                visible_spinners += 1
+                        if visible_spinners == 0:
+                            break
+                        page.wait_for_timeout(500)
+
+                    # Snapshot of the preview screen right before we type
+                    # anything, so we can check for error indicators (like
+                    # a red dot) on the send button before it gets clicked.
+                    page.screenshot(path="debug_preview_before_caption.png")
+
+                    caption_box = page.get_by_role("textbox").last
+
+                    # A normal click can get blocked here — WhatsApp's own
+                    # actionability log shows another element overlapping
+                    # the caption box on this screen and intercepting
+                    # pointer events. force=True bypasses that check since
+                    # we already know this is the right element to focus.
+                    caption_box.click(force=True)
+
+                    lines = message.split("\n")
+                    for i, line in enumerate(lines):
+                        caption_box.press_sequentially(line, delay=10)
+                        if i != len(lines) - 1:
+                            page.keyboard.down("Shift")
+                            page.keyboard.press("Enter")
+                            page.keyboard.up("Shift")
+
+                    # One more snapshot right before clicking Send, so we
+                    # can see exactly what the button looks like (e.g. any
+                    # red error dot) at the moment of the click.
+                    page.screenshot(path="debug_preview_before_send.png")
+
+                    # Pressing Enter does not reliably send from the photo
+                    # preview screen — click the visible Send button instead.
+                    send_button.click()
+                    page.wait_for_timeout(3000)
+
+                else:
+                    message_box = page.get_by_role("textbox").last
+                    message_box.wait_for(timeout=10000)
+                    message_box.click()
+
+                    lines = message.split("\n")
+                    for i, line in enumerate(lines):
+                        message_box.press_sequentially(line, delay=10)
+                        if i != len(lines) - 1:
+                            page.keyboard.down("Shift")
+                            page.keyboard.press("Enter")
+                            page.keyboard.up("Shift")
+
+                    page.keyboard.press("Enter")
+
+                print("=" * 60)
+                print("Message Sent Successfully")
+                print("=" * 60)
+                page.wait_for_timeout(3000)
+
+            finally:
+                context.close()

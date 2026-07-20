@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+
+# Logs
+logs/
+*.log
+
+# Screenshots
+screenshots/
+
+# Browser Sessions
+browser/profile/
+browser/whatsapp_profile/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Playwright
+playwright-report/
+test-results/

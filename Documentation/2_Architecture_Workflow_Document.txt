@@ -1,0 +1,11 @@
+Architecture and Workflow
+
+Cron | v bot.py | v BrowserManager (Playwright) | v Grafana Dashboards |
++–> Dashboard Capture | | | +–> Screenshots/ | +–> Metric Extractor |
++–> Metric Parser | +–> Threshold Comparison | +–> Logs | +–> (Future)
+WhatsApp Sender
+
+Components - config/: Project configuration. - src/: Core modules. -
+browser/: Persistent browser profiles. - screenshots/: Captured
+dashboard images. - logs/: Execution logs. - bot.py: Main application
+entry point.

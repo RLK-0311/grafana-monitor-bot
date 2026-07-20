@@ -1,0 +1,11 @@
+enabled: true
+
+personal_chat: "SonJIO (You)"
+
+group_chat: "CM-MONITORING"
+
+browser:
+  headless: false
+
+message_prefix: |
+  🚨 GRAFANA ALERT

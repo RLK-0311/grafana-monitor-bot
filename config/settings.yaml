@@ -1,0 +1,16 @@
+browser:
+  headless: false
+  width: 1920
+  height: 1080
+
+capture:
+  wait_after_load: 5
+  wait_after_refresh: 3
+  full_page: true
+
+cleanup:
+  enabled: true
+  delay_minutes: 5
+
+logging:
+  level: INFO
