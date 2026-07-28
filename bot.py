@@ -15,10 +15,11 @@ from src.whatsapp import WhatsAppSender
 # LOGGING
 # ==============================================================================
 logger.add(
-    "logs/grafana_monitor.log",
-    rotation="10 MB",
-    retention="30 days",
+    "logs/grafana_monitor_{time:YYYY-MM-DD}.log",
     level="INFO",
+    rotation="00:00",  # Create a new log file every day at midnight
+    retention="2 days", # Automatically delete logs older than 2 days
+    compression="zip",  # Compress old logs to save disk space
     enqueue=True,
 )
 
