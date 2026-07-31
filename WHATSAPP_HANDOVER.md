@@ -77,7 +77,7 @@ The project will continue working with the new engineer's WhatsApp account witho
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-##what if instead of personal name i want to change like a new group in that
+##  what if instead of personal name i want to change like a new group in that
 
 # WhatsApp Configuration Handover
 
