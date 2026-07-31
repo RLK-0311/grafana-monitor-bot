@@ -146,6 +146,6 @@ Only `config/whatsapp.yaml` and the WhatsApp login need to be changed. No Python
 
 ### If in case the Login Page is Visible in the Screenshot of the Dashboard as well as Whatsapp 
 
-- Try Manually Running the Bot.py File and Login while The Login Page Appears and It will Login for some amount of Time and If it Happens again means Try DOing the Same.
+- Try Manually Running the Bot.py File and Login while The Login Page Appears and It will Login for some amount of Time and If it Happens again means Try Doing the Same.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
