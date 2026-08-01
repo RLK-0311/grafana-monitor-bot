@@ -144,8 +144,16 @@ Only `config/whatsapp.yaml` and the WhatsApp login need to be changed. No Python
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### If in case the Login Page is Visible in the Screenshot of the Dashboard as well as Whatsapp 
+-### If in case the Login Page is Visible in the Screenshot of the Dashboard as well as Whatsapp 
 
-- Try Manually Running the Bot.py File and Login while The Login Page Appears and It will Login for some amount of Time and If it Happens again means Try DOing the Same.
+-- Try Manually Running the Bot.py File and Login while The Login Page Appears and It will Login for some amount of Time and If it Happens again means Try DOing the Same.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Change the config/grafana.yaml
+
+-- Change the Username and Password with The User's.
+
+-- I have made Changes in src/dashboard File and I Have Done Neccessary Code to Make sure these will make the Login page will automatically Login if Logged out.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
