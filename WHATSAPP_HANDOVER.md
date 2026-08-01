@@ -157,3 +157,7 @@ Only `config/whatsapp.yaml` and the WhatsApp login need to be changed. No Python
 -- I have made Changes in src/dashboard File and I Have Done Neccessary Code to Make sure these will make the Login page will automatically Login if Logged out.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## NOTE THAT THE URL I HAVE GIVEN TO TAKE SCREENSHOT IS ONLY 20, If Needed add Additional URL OF those also
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
