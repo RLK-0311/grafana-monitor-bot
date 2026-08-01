@@ -1,5 +1,21 @@
 import asyncio
+from pathlib import Path
 from loguru import logger
+
+# Create logs directory
+Path("logs").mkdir(exist_ok=True)
+
+# Clear bot.log every run
+Path("logs/bot.log").write_text("")
+
+from datetime import datetime
+
+today = datetime.now().strftime("%Y-%m-%d")
+
+for log_file in Path("logs").glob("grafana_monitor_*.log"):
+    if today not in log_file.name:
+        log_file.unlink()
+
 from src.config_loader import ConfigLoader
 from src.browser_manager import BrowserManager
 from src.dashboard_capture import DashboardCapture
@@ -18,8 +34,7 @@ logger.add(
     "logs/grafana_monitor_{time:YYYY-MM-DD}.log",
     level="INFO",
     rotation="00:00",  # Create a new log file every day at midnight
-    retention="2 days", # Automatically delete logs older than 2 days
-    compression="zip",  # Compress old logs to save disk space
+    retention="1 day", # Automatically delete logs older than 1 day
     enqueue=True,
 )
 
