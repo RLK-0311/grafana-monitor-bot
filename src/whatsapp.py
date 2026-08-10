@@ -119,7 +119,7 @@ class WhatsAppSender:
         search.fill("")
         search.press_sequentially(chat_name, delay=30)
 
-        self.page.wait_for_timeout(2000)
+        self.page.wait_for_timeout(20000)
 
         print("Selecting chat...")
 
@@ -154,7 +154,7 @@ class WhatsAppSender:
         (call open_chat() first).
         """
         message_box = self.page.get_by_role("textbox").last
-        message_box.wait_for(timeout=10000)
+        message_box.wait_for(timeout=20000)
         message_box.click()
 
         lines = message.split("\n")
@@ -166,7 +166,7 @@ class WhatsAppSender:
                 self.page.keyboard.up("Shift")
 
         self.page.keyboard.press("Enter")
-        self.page.wait_for_timeout(2000)
+        self.page.wait_for_timeout(20000)
 
         print("=" * 60)
         print("Message Sent Successfully")
