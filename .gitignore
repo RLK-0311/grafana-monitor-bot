@@ -1,27 +1,31 @@
 # Python
-__pycache__/
-*.pyc
-
-# Virtual Environment
 venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment
+.env
 
 # Logs
 logs/
 *.log
 
 # Screenshots
-screenshots/
+*.png
+*.jpg
+*.jpeg
 
-# Browser Sessions
-browser/profile/
+# Reports
+reports/
+
+# WhatsApp browser session
 browser/whatsapp_profile/
+browser/profile/
+whatsapp_profile/
 
-# OS
-.DS_Store
-Thumbs.db
-
-# VS Code
-.vscode/
+# Debug
+debug_*.png
 
 # Playwright
 playwright-report/
