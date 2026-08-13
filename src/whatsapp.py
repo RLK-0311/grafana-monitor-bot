@@ -47,8 +47,7 @@ class WhatsAppSender:
         """
         Start Chromium using the persistent WhatsApp profile.
 
-        The persistent profile stores the WhatsApp Web login session,
-        so normally you do NOT need to scan the QR code every time.
+        The persistent profile stores the WhatsApp Web login session.
 
         This method:
             1. Starts Playwright
@@ -89,7 +88,7 @@ class WhatsAppSender:
         )
 
         # ---------------------------------------------------------
-        # Get existing page or create a new page
+        # Get existing page or create new page
         # ---------------------------------------------------------
 
         if self.context.pages:
@@ -116,12 +115,14 @@ class WhatsAppSender:
 
         except Exception as e:
 
-            print(f"WhatsApp navigation warning: {e}")
+            print(
+                f"WhatsApp navigation warning: {e}"
+            )
 
         print("Waiting for WhatsApp to load...")
 
         # ---------------------------------------------------------
-        # Wait for WhatsApp
+        # Wait for WhatsApp readiness
         # ---------------------------------------------------------
 
         loaded = self._wait_for_whatsapp()
@@ -151,8 +152,8 @@ class WhatsAppSender:
 
         before the search textbox becomes available.
 
-        We therefore check several possible states instead of
-        immediately waiting 60 seconds for one locator.
+        Several selectors are checked because WhatsApp Web's DOM
+        can change.
         """
 
         timeout_seconds = 120
@@ -164,17 +165,29 @@ class WhatsAppSender:
             "for WhatsApp..."
         )
 
+        last_status = None
+
         while time.time() - start_time < timeout_seconds:
 
             try:
 
                 # -------------------------------------------------
-                # Check whether page is still alive
+                # Check page state
                 # -------------------------------------------------
+
+                if self.page is None:
+
+                    print(
+                        "WhatsApp page object is not available."
+                    )
+
+                    return False
 
                 if self.page.is_closed():
 
-                    print("WhatsApp page was closed.")
+                    print(
+                        "WhatsApp page was closed."
+                    )
 
                     return False
 
@@ -184,19 +197,29 @@ class WhatsAppSender:
 
                 current_url = self.page.url
 
-                print(
-                    f"WhatsApp URL: {current_url}"
-                )
+                if current_url != last_status:
+
+                    print(
+                        f"WhatsApp URL: {current_url}"
+                    )
+
+                    last_status = current_url
 
                 # -------------------------------------------------
-                # Search textbox
+                # Check role=textbox
                 # -------------------------------------------------
 
                 textboxes = self.page.get_by_role(
                     "textbox"
                 )
 
-                textbox_count = textboxes.count()
+                try:
+
+                    textbox_count = textboxes.count()
+
+                except Exception:
+
+                    textbox_count = 0
 
                 if textbox_count > 0:
 
@@ -216,10 +239,11 @@ class WhatsAppSender:
                                 return True
 
                         except Exception:
+
                             continue
 
                 # -------------------------------------------------
-                # Check common WhatsApp elements
+                # Check common WhatsApp selectors
                 # -------------------------------------------------
 
                 selectors = [
@@ -244,32 +268,34 @@ class WhatsAppSender:
 
                         count = locator.count()
 
-                        if count > 0:
+                        if count == 0:
+                            continue
 
-                            for i in range(count):
+                        for i in range(count):
 
-                                try:
+                            try:
 
-                                    element = locator.nth(i)
+                                element = locator.nth(i)
 
-                                    if element.is_visible():
+                                if element.is_visible():
 
-                                        print(
-                                            f"WhatsApp ready "
-                                            f"using selector: "
-                                            f"{selector}"
-                                        )
+                                    print(
+                                        "WhatsApp ready using "
+                                        f"selector: {selector}"
+                                    )
 
-                                        return True
+                                    return True
 
-                                except Exception:
-                                    continue
+                            except Exception:
+
+                                continue
 
                     except Exception:
+
                         continue
 
                 # -------------------------------------------------
-                # Detect QR code
+                # Detect QR/login screen
                 # -------------------------------------------------
 
                 qr_selectors = [
@@ -291,15 +317,17 @@ class WhatsAppSender:
                         ).count() > 0:
 
                             qr_detected = True
+
                             break
 
                     except Exception:
+
                         pass
 
                 if qr_detected:
 
                     print(
-                        "WhatsApp login screen detected."
+                        "WhatsApp login/QR screen detected."
                     )
 
                     print(
@@ -308,7 +336,7 @@ class WhatsAppSender:
                     )
 
                 # -------------------------------------------------
-                # Detect loading screen
+                # Detect page text
                 # -------------------------------------------------
 
                 try:
@@ -325,13 +353,17 @@ class WhatsAppSender:
                             "WhatsApp is still loading..."
                         )
 
-                    elif "Use WhatsApp on your computer" in body_text:
+                    elif (
+                        "Use WhatsApp on your computer"
+                        in body_text
+                    ):
 
                         print(
                             "WhatsApp login screen detected."
                         )
 
                 except Exception:
+
                     pass
 
             except Exception as e:
@@ -344,7 +376,13 @@ class WhatsAppSender:
             # Wait before checking again
             # -----------------------------------------------------
 
-            self.page.wait_for_timeout(3000)
+            try:
+
+                self.page.wait_for_timeout(3000)
+
+            except Exception:
+
+                time.sleep(3)
 
         print(
             "WhatsApp did not become ready "
@@ -360,17 +398,14 @@ class WhatsAppSender:
     def _save_debug_screenshot(self):
 
         """
-        Save a screenshot when WhatsApp fails to load.
-
-        This helps diagnose:
-            - WhatsApp loading problems
-            - QR login problems
-            - Browser problems
-            - Network problems
-            - Profile problems
+        Save a screenshot when WhatsApp fails to load or a chat
+        cannot be verified.
         """
 
         try:
+
+            if not self.page:
+                return
 
             path = "debug_whatsapp_load_failed.png"
 
@@ -380,15 +415,44 @@ class WhatsAppSender:
             )
 
             print(
-                f"WhatsApp failed to load — "
-                f"saved {path}"
+                f"WhatsApp debug screenshot saved: {path}"
             )
 
         except Exception as e:
 
             print(
-                f"Could not save WhatsApp debug screenshot: {e}"
+                "Could not save WhatsApp debug screenshot: "
+                f"{e}"
             )
+
+    # =============================================================
+    # NORMALIZE CHAT NAME
+    # =============================================================
+
+    @staticmethod
+    def _normalize_chat_name(name):
+
+        """
+        Normalize chat names before comparison.
+
+        Example:
+
+            'CM-MONITORING'
+            'CM-MONITORING '
+
+        become comparable strings.
+        """
+
+        if name is None:
+
+            return ""
+
+        return " ".join(
+            str(name)
+            .strip()
+            .lower()
+            .split()
+        )
 
     # =============================================================
     # OPEN CHAT
@@ -399,13 +463,13 @@ class WhatsAppSender:
         """
         Search for and open a WhatsApp chat.
 
-        Example:
+        IMPORTANT:
 
-            open_chat("SonJIO (You)")
+        After clicking the chat, this method verifies the actual
+        conversation header.
 
-        The browser session must already be started using:
-
-            start()
+        This prevents screenshots from accidentally being sent
+        to the previous chat if WhatsApp fails to switch chats.
         """
 
         if not self.page:
@@ -415,6 +479,12 @@ class WhatsAppSender:
                 "Call start() first."
             )
 
+        if not chat_name:
+
+            raise Exception(
+                "WhatsApp chat name is empty."
+            )
+
         print("=" * 70)
         print(
             f"Searching WhatsApp chat: {chat_name}"
@@ -422,22 +492,34 @@ class WhatsAppSender:
         print("=" * 70)
 
         # ---------------------------------------------------------
-        # Find search textbox
+        # Get search box
         # ---------------------------------------------------------
 
         search = self._get_search_box()
 
         if search is None:
 
+            self._save_debug_screenshot()
+
             raise Exception(
                 "WhatsApp search textbox not found."
             )
 
         # ---------------------------------------------------------
-        # Click search
+        # Click search box
         # ---------------------------------------------------------
 
-        search.click()
+        try:
+
+            search.click()
+
+        except Exception as e:
+
+            self._save_debug_screenshot()
+
+            raise Exception(
+                f"Could not click WhatsApp search box: {e}"
+            )
 
         # ---------------------------------------------------------
         # Clear existing search
@@ -449,12 +531,26 @@ class WhatsAppSender:
 
         except Exception:
 
-            search.press("Control+A")
-            search.press("Backspace")
+            try:
+
+                search.press("Control+A")
+                search.press("Backspace")
+
+            except Exception as e:
+
+                self._save_debug_screenshot()
+
+                raise Exception(
+                    f"Could not clear WhatsApp search box: {e}"
+                )
 
         # ---------------------------------------------------------
         # Type chat name
         # ---------------------------------------------------------
+
+        print(
+            f"Typing chat name: {chat_name}"
+        )
 
         search.press_sequentially(
             chat_name,
@@ -470,7 +566,7 @@ class WhatsAppSender:
         print("Selecting chat...")
 
         # ---------------------------------------------------------
-        # Extract actual chat name
+        # Extract actual searchable name
         #
         # Example:
         #
@@ -482,6 +578,14 @@ class WhatsAppSender:
         # ---------------------------------------------------------
 
         search_name = chat_name.split("(")[0].strip()
+
+        expected_name = self._normalize_chat_name(
+            search_name
+        )
+
+        print(
+            f"Expected chat: {search_name}"
+        )
 
         # ---------------------------------------------------------
         # Try exact title
@@ -510,12 +614,30 @@ class WhatsAppSender:
                 "Trying text search..."
             )
 
-            chat = self.page.get_by_text(
-                search_name,
-                exact=True
-            )
+            try:
+
+                chat = self.page.get_by_text(
+                    search_name,
+                    exact=True
+                )
+
+                count = chat.count()
+
+            except Exception:
+
+                count = 0
+
+        # ---------------------------------------------------------
+        # Additional fallback
+        # ---------------------------------------------------------
+
+        if count == 0:
 
             try:
+
+                chat = self.page.locator(
+                    f'span[title*="{search_name}"]'
+                )
 
                 count = chat.count()
 
@@ -535,15 +657,91 @@ class WhatsAppSender:
                 f"Chat '{search_name}' not found."
             )
 
+        print(
+            f"Found {count} matching chat element(s)."
+        )
+
         # ---------------------------------------------------------
         # Click first matching chat
         # ---------------------------------------------------------
 
-        chat.first.click()
+        try:
+
+            chat.first.click()
+
+        except Exception as e:
+
+            self._save_debug_screenshot()
+
+            raise Exception(
+                f"Could not click chat "
+                f"'{search_name}': {e}"
+            )
 
         # ---------------------------------------------------------
-        # Wait for conversation header
+        # IMPORTANT:
+        #
+        # Wait for WhatsApp to actually switch conversation.
         # ---------------------------------------------------------
+
+        print(
+            f"Waiting for WhatsApp to open "
+            f"'{search_name}'..."
+        )
+
+        self.page.wait_for_timeout(3000)
+
+        # ---------------------------------------------------------
+        # VERIFY ACTUAL CONVERSATION
+        # ---------------------------------------------------------
+
+        verified = self._verify_open_chat(
+            expected_name
+        )
+
+        if not verified:
+
+            self._save_debug_screenshot()
+
+            raise Exception(
+                f"WhatsApp opened the wrong chat. "
+                f"Expected '{search_name}'. "
+                f"Screenshot/image upload has been stopped."
+            )
+
+        print(
+            f"Verified correct WhatsApp chat: "
+            f"{search_name}"
+        )
+
+    # =============================================================
+    # VERIFY OPEN CHAT
+    # =============================================================
+
+    def _verify_open_chat(self, expected_name):
+
+        """
+        Verify that WhatsApp actually opened the requested chat.
+
+        Returns:
+
+            True  -> correct chat is open
+            False -> wrong chat / verification failed
+        """
+
+        print(
+            "Verifying active WhatsApp conversation..."
+        )
+
+        expected_name = self._normalize_chat_name(
+            expected_name
+        )
+
+        # ---------------------------------------------------------
+        # Try conversation header
+        # ---------------------------------------------------------
+
+        header_text = ""
 
         try:
 
@@ -555,17 +753,144 @@ class WhatsAppSender:
                 timeout=15000
             )
 
-            header_text = header.inner_text()
-
-            print(
-                f"Opened Chat : {header_text}"
-            )
+            header_text = header.inner_text().strip()
 
         except Exception:
 
+            # -----------------------------------------------------
+            # Fallback selectors
+            # -----------------------------------------------------
+
+            fallback_selectors = [
+
+                '[data-testid="conversation-header"]',
+
+                'header',
+
+            ]
+
+            for selector in fallback_selectors:
+
+                try:
+
+                    locator = self.page.locator(
+                        selector
+                    )
+
+                    count = locator.count()
+
+                    if count == 0:
+                        continue
+
+                    for i in range(count):
+
+                        try:
+
+                            element = locator.nth(i)
+
+                            if element.is_visible():
+
+                                text = (
+                                    element
+                                    .inner_text()
+                                    .strip()
+                                )
+
+                                if text:
+
+                                    header_text = text
+
+                                    break
+
+                        except Exception:
+
+                            continue
+
+                    if header_text:
+                        break
+
+                except Exception:
+
+                    continue
+
+        # ---------------------------------------------------------
+        # Could not determine active chat
+        # ---------------------------------------------------------
+
+        if not header_text:
+
             print(
-                f"Opened chat : {search_name}"
+                "Could not determine current "
+                "WhatsApp conversation header."
             )
+
+            return False
+
+        # ---------------------------------------------------------
+        # Log actual header
+        # ---------------------------------------------------------
+
+        print(
+            f"Actual WhatsApp conversation: "
+            f"{header_text}"
+        )
+
+        # ---------------------------------------------------------
+        # Normalize
+        # ---------------------------------------------------------
+
+        actual_text = self._normalize_chat_name(
+            header_text
+        )
+
+        # ---------------------------------------------------------
+        # Direct comparison
+        # ---------------------------------------------------------
+
+        if expected_name == actual_text:
+
+            print(
+                "Chat verification successful."
+            )
+
+            return True
+
+        # ---------------------------------------------------------
+        # Header may contain additional text
+        #
+        # Example:
+        #
+        # CM-MONITORING
+        # 14 participants
+        #
+        # ---------------------------------------------------------
+
+        if expected_name in actual_text:
+
+            print(
+                "Chat verification successful "
+                "(partial header match)."
+            )
+
+            return True
+
+        # ---------------------------------------------------------
+        # Verification failed
+        # ---------------------------------------------------------
+
+        print(
+            "CHAT VERIFICATION FAILED"
+        )
+
+        print(
+            f"Expected : {expected_name}"
+        )
+
+        print(
+            f"Actual   : {actual_text}"
+        )
+
+        return False
 
     # =============================================================
     # GET SEARCH BOX
@@ -592,6 +917,10 @@ class WhatsAppSender:
 
         ]
 
+        # ---------------------------------------------------------
+        # Try known selectors
+        # ---------------------------------------------------------
+
         for selector in selectors:
 
             try:
@@ -607,18 +936,24 @@ class WhatsAppSender:
 
                 for i in range(count):
 
-                    element = locator.nth(i)
+                    try:
 
-                    if element.is_visible():
+                        element = locator.nth(i)
 
-                        return element
+                        if element.is_visible():
+
+                            return element
+
+                    except Exception:
+
+                        continue
 
             except Exception:
 
                 continue
 
         # ---------------------------------------------------------
-        # Fallback
+        # Fallback to role textbox
         # ---------------------------------------------------------
 
         try:
@@ -631,11 +966,17 @@ class WhatsAppSender:
 
             for i in range(count):
 
-                element = textboxes.nth(i)
+                try:
 
-                if element.is_visible():
+                    element = textboxes.nth(i)
 
-                    return element
+                    if element.is_visible():
+
+                        return element
+
+                except Exception:
+
+                    continue
 
         except Exception:
 
@@ -651,6 +992,11 @@ class WhatsAppSender:
 
         """
         Send a text message to the currently opened chat.
+
+        IMPORTANT:
+
+        The caller must first call open_chat() and verify the
+        destination chat.
         """
 
         if not self.page:
@@ -659,7 +1005,17 @@ class WhatsAppSender:
                 "WhatsApp browser is not started."
             )
 
-        print("Sending WhatsApp message...")
+        if not message:
+
+            print(
+                "No WhatsApp message to send."
+            )
+
+            return
+
+        print(
+            "Sending WhatsApp message..."
+        )
 
         # ---------------------------------------------------------
         # Find message textbox
@@ -678,6 +1034,8 @@ class WhatsAppSender:
 
         except Exception:
 
+            self._save_debug_screenshot()
+
             raise Exception(
                 "WhatsApp message textbox "
                 "was not found."
@@ -687,9 +1045,26 @@ class WhatsAppSender:
         # Enter message
         # ---------------------------------------------------------
 
-        message_box.click()
+        try:
 
-        message_box.fill(message)
+            message_box.click()
+
+            message_box.fill(message)
+
+        except Exception:
+
+            # Fallback for contenteditable elements
+
+            message_box.click()
+
+            message_box.press("Control+A")
+
+            message_box.press("Backspace")
+
+            message_box.press_sequentially(
+                message,
+                delay=5
+            )
 
         # ---------------------------------------------------------
         # Send
@@ -708,7 +1083,7 @@ class WhatsAppSender:
     def send_image(self, image_path):
 
         """
-        Send an image to the currently opened chat.
+        Send a single image to the currently opened chat.
 
         The actual upload logic is handled by:
 
@@ -719,6 +1094,12 @@ class WhatsAppSender:
 
             raise Exception(
                 "WhatsApp browser is not started."
+            )
+
+        if not image_path:
+
+            raise ValueError(
+                "Image path is empty."
             )
 
         if not os.path.exists(image_path):
@@ -760,7 +1141,28 @@ class WhatsAppSender:
 
         """
         Send multiple images to the currently opened chat.
+
+        IMPORTANT:
+
+        This method assumes open_chat() has already verified the
+        destination chat.
+
+        Therefore:
+
+            open_chat("CM-MONITORING")
+                    ↓
+            verification
+                    ↓
+            send_images()
+
+        If open_chat() fails, this method is never reached.
         """
+
+        if not self.page:
+
+            raise Exception(
+                "WhatsApp browser is not started."
+            )
 
         if not image_paths:
 
@@ -770,9 +1172,17 @@ class WhatsAppSender:
 
             return
 
+        # ---------------------------------------------------------
+        # Validate images
+        # ---------------------------------------------------------
+
         valid_images = []
 
         for image_path in image_paths:
+
+            if not image_path:
+
+                continue
 
             if os.path.exists(image_path):
 
@@ -787,6 +1197,10 @@ class WhatsAppSender:
                     f"{image_path}"
                 )
 
+        # ---------------------------------------------------------
+        # No valid images
+        # ---------------------------------------------------------
+
         if not valid_images:
 
             print(
@@ -795,9 +1209,33 @@ class WhatsAppSender:
 
             return
 
+        # ---------------------------------------------------------
+        # Log upload target
+        #
+        # The active chat was already verified by open_chat().
+        # ---------------------------------------------------------
+
+        print("=" * 70)
         print(
-            f"Sending {len(valid_images)} image(s)..."
+            "PREPARING WHATSAPP IMAGE UPLOAD"
         )
+        print("=" * 70)
+
+        print(
+            f"Images to send: {len(valid_images)}"
+        )
+
+        for image in valid_images:
+
+            print(
+                f"  - {image}"
+            )
+
+        print("=" * 70)
+
+        # ---------------------------------------------------------
+        # Upload
+        # ---------------------------------------------------------
 
         try:
 
@@ -806,9 +1244,11 @@ class WhatsAppSender:
                 valid_images
             )
 
+            print("=" * 70)
             print(
                 "All images sent successfully."
             )
+            print("=" * 70)
 
         except Exception as e:
 
@@ -827,8 +1267,8 @@ class WhatsAppSender:
         """
         Close the browser and stop Playwright.
 
-        This method is safe to call even if the browser has already
-        crashed or closed.
+        Safe to call even if the browser has already crashed
+        or closed.
         """
 
         print("=" * 70)
