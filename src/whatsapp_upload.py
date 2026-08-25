@@ -121,10 +121,6 @@ def upload_images(page, image_paths):
     # Give WhatsApp time to create preview
     page.wait_for_timeout(5000)
 
-    page.screenshot(
-        path="album_preview.png",
-        full_page=True
-    )
 
     # ==========================================================
     # Wait for Send button
