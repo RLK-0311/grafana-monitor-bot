@@ -3,6 +3,9 @@ dashboards:
   - name: CM-RDS-ALERT
     url: "https://monitoring.creditmantri.com/d/vL8ASiO7k/cm-rds-alert-85?orgId=1&refresh=5s&from=now-30m&to=now"
 
+  - name: CM-RDS-STORAGE-ALERT
+    url: "https://monitoring.creditmantri.com/d/yH3oYw57k/rds-disk-space-30-and-20alert?orgId=1&from=now-30m&to=now-1m&refresh=5s"
+
   - name: CM-CRON
     url: "https://monitoring.creditmantri.com/d/CM-CRON/cm-cron-90?orgId=1&refresh=30s&from=now-30m&to=now"
 
